@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'blogs#home'
 
+  get 'blogs/about_me'
+
   resources :blog_comments
 
   resources :blog_posts
