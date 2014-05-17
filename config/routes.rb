@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'blogs/contact_me'
 
+  get 'blogs/home'
+
   resources :blog_comments
 
   resources :blog_posts

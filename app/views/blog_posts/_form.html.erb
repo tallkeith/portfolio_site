@@ -10,11 +10,11 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <div>
     <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <%= f.select :blog_id, Blog.all.collect {|blog| [blog.author, blog.id]} %>
   </div>
+    <br><br>
   <div class="field">
     <%= f.label :subject %><br>
     <%= f.text_field :subject %>
@@ -27,6 +27,7 @@
     <%= f.label :blog_id %><br>
     <%= f.number_field :blog_id %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
