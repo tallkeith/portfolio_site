@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'blogs/about_me'
 
+  get 'blogs/contact_me'
+
   resources :blog_comments
 
   resources :blog_posts
