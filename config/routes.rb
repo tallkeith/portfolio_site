@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'blogs/home'
 
+  post 'blogs/new'
+
   resources :blog_comments
 
   resources :blog_posts
