@@ -14,7 +14,7 @@
  *= require_self
  */
 body {
-  background: url("ruby-on-rails.jpg") no-repeat center center fixed;
+  background: url("red-rails50op.png") no-repeat center center fixed;
   background-size: 100%;
   background-color: #fff;
   color: #333;
@@ -84,4 +84,12 @@ div {
     font-size: 12px;
     list-style: square;
   }
+  .back-to-top {
+      cursor: pointer;
+      position: fixed;
+      bottom: 30px;
+      right:30px;
+      display:none;
+  }
+
 }
