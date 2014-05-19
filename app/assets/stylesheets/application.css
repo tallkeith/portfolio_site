@@ -87,12 +87,9 @@ div {
     font-size: 12px;
     list-style: square;
   }
-  .back-to-top {
-      cursor: pointer;
-      position: fixed;
-      bottom: 30px;
-      right:30px;
-      display:none;
+
+  .navbar-inner {
+    height: 500px;
   }
 
 }

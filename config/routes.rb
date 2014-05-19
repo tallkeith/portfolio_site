@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post 'blogs/new'
 
+  post 'blog_posts/new'
+
   resources :blog_comments
 
   resources :blog_posts

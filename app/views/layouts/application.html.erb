@@ -49,16 +49,23 @@
 </body>
 
 <br><br><br><br>
- <div class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-      <p class="navbar-text pull-left">&copy; 2014 Keith Nash</p>  
-      <%=navbar%>    
-      <% link_to image_tag("Twitter-icon 45x45.jpg"), "http://twitter.com/TallestKeith"%>
-      <a href="http://facebook.com/tallestkeith" class="navbar-btn btn pull-right"><%=image_tag("Facebook-icon 45x45.jpg")%></a>
-      <a href="http://github.com/tallkeith" class="navbar-btn btn pull-right"><%=image_tag("Github-icon 45x45.jpg") %></a>
-      <a href="http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/" class="navbar-btn btn pull-right"><%=image_tag("Linkedin-icon 45x45.jpg") %></a>
-    </div>
-    
-    
-  </div>
+
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand pull-left">&copy; 2014 Keith Nash</a>
+	    </div>
+	    <div class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav navbar-btn btn pull-right">
+	        <li><%= link_to image_tag("Twitter-icon 45x45.jpg"), "http://twitter.com/TallestKeith"%></li>
+	      	<li><%= link_to image_tag("Facebook-icon 45x45.jpg"), "http://facebook.com/tallestkeith"%></li>
+	      	<li><%= link_to image_tag("Github-icon 45x45.jpg"), "http://github.com/tallkeith"%></li>
+	      	<li><%= link_to image_tag("Linkedin-icon 45x45.jpg"), "http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/"%></li>
+
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</div>
+</div>
+ 
 </html>
