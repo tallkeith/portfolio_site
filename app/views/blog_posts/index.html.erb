@@ -17,6 +17,20 @@
         <td><%= blog_post.author %></td>
         <td><%= blog_post.subject %></td>
         <td><%= blog_post.post %></td>
+
+        <td><%=blog_post.blog_comments.count%></td>
+
+        <% blog_post.blog_comments.each do |comments|%>
+          <td><%=comments.user%></td>
+          <td><%=comments.created_at%></td>
+          <td><%=comments.comment%></td>
+          <%end%>
+
+          
+
+
+
+
         <td><%= blog_post.blog_id %></td>
         <td><%= link_to 'Show', blog_post %></td>
         <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>

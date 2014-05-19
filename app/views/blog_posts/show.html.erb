@@ -20,5 +20,7 @@
   <%= @blog_post.blog_id %>
 </p>
 
+<%=link_to 'New Comment', new_blog_comment_path%>
+
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <%= link_to 'Back', blog_posts_path %>

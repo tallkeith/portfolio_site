@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'blogs#home'
+  
+  root'blogs#home'
 
   get 'blogs/about_me'
 
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   post 'blogs/new'
 
   post 'blog_posts/new'
+
+  devise_for :users
 
   resources :blog_comments
 
