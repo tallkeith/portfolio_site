@@ -2,6 +2,8 @@
 
 <p>This website was built using HTML, CSS, Javascript, and Ruby on Rails with an eye towards responsive design.</p>
 
+<p>This page is a work in progress and is constantly changing as I gain more skills and tinker with the functionality. If you find a bug, please report it here <%= link_to 'Bug Report', blogs_contact_me_path%></p>
+
   <% if user_signed_in? %>
 
   <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "button" %>

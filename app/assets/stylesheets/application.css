@@ -87,9 +87,8 @@ div {
     font-size: 12px;
     list-style: square;
   }
-
-  .navbar-inner {
-    height: 500px;
-  }
+p.about {
+  width: 50%;
+}
 
 }

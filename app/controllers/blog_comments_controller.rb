@@ -35,7 +35,7 @@ class BlogCommentsController < ApplicationController
         update_num_comments @blog_comment.blog_post_id
 
 
-        format.html { redirect_to @blog_comment, notice: 'Blog comment was successfully created.' }
+        format.html { redirect_to @blog_comment.blog_post, notice: 'Blog comment was successfully created.' }
         format.json { render :show, status: :created, location: @blog_comment }
       else
         format.html { render :new }

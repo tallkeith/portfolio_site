@@ -15,12 +15,48 @@
   <%= @blog_post.post %>
 </p>
 
-<p>
-  <strong>Blog:</strong>
-  <%= @blog_post.blog_id %>
-</p>
 
-<%=link_to 'New Comment', new_blog_comment_path%>
+<%if @blog_post.num_comments == 0 || @blog_post.num_comments == nil%>
+	Sorry, No comments yet! <br><br>
+
+	<%else%>
+<p>
+	<% @blog_post.blog_comments.each do |comments|%>
+          <%=comments.user%>
+          <%=comments.created_at%>
+          <%=comments.comment%>
+          <br><br>
+          <%end%>
+      </p>
+<%end%>
+
+This is the form?
+
+<%= form_for(@blog_comment) do |f| %>
+  <% if @blog_comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_comment.errors.count, "error") %> prohibited this blog_comment from being saved:</h2>
+
+      <ul>
+      <% @blog_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+
+    <%= f.hidden_field :blog_post_id, :value => @blog_post.id%>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%=link_to 'New Comment', new_blog_comment_path%> |
 
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <%= link_to 'Back', blog_posts_path %>

@@ -12,6 +12,7 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts/1
   # GET /blog_posts/1.json
   def show
+    @blog_comment = BlogComment.new
   end
 
   # GET /blog_posts/new
@@ -71,6 +72,6 @@ class BlogPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
-      params.require(:blog_post).permit(:author, :subject, :post, :blog_id)
+      params.require(:blog_post).permit(:author, :subject, :post, :blog_id, :num_comments)
     end
 end
