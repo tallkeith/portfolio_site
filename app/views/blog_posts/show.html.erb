@@ -21,7 +21,7 @@
 
 	<%else%>
 <p>
-	<% @blog_post.blog_comments.each do |comments|%>
+	<% @blog_post.blog_comments.reverse.each do |comments|%>
           <%=comments.user%>
           <%=comments.created_at%>
           <%=comments.comment%>
@@ -29,8 +29,6 @@
           <%end%>
       </p>
 <%end%>
-
-This is the form?
 
 <%= form_for(@blog_comment) do |f| %>
   <% if @blog_comment.errors.any? %>
@@ -46,15 +44,20 @@ This is the form?
   <% end %>
 
   <div class="field">
+    
+
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
 
+
     <%= f.hidden_field :blog_post_id, :value => @blog_post.id%>
   </div>
+  <br>
  
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 <% end %>
 <%=link_to 'New Comment', new_blog_comment_path%> |
 
