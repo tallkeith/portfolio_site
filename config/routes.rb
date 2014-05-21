@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  
+  get 'blogs/ajax'
+
+  get 'users/show_users'
+
   root'blogs#home'
 
   get 'blogs/about_me'

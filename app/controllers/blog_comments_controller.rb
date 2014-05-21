@@ -1,7 +1,7 @@
 class BlogCommentsController < ApplicationController
   before_action :set_blog_comment, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!
+  
   include BlogPostsHelper
   # GET /blog_comments
   # GET /blog_comments.json

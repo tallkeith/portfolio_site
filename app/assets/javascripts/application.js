@@ -15,3 +15,23 @@
 //= require turbolinks
 //= require_tree .
 
+	function loadBlog_posts(){
+
+		$.getJSON("/blog_posts.json", function(data){
+			console.log(data);
+
+			var collection_of_titles = "";
+
+			$.each(data, function (index){
+
+				// alert(data[index].title);
+				collection_of_titles += "<b>" + data[index].Subject + "</b><br>";
+
+			});
+			
+			$("#blog_posts").html(collection_of_titles);
+
+		});
+	
+	}
+
