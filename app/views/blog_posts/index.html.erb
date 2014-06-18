@@ -15,13 +15,12 @@
   <tbody>
     <% @blog_posts.each do |blog_post| %>
       <tr>
-        <td><%= blog_post.author %></td>
+        <td><%= blog_post.blog.author %></td>
         <td><%= blog_post.subject %></td>
         <td><%= blog_post.post %></td>
         <td><%=blog_post.blog_comments.count%></td>
         
         <td><%= link_to 'Show', blog_post %></td>
-        <td><%= link_to 'New Comment', new_blog_comment_path%></td>
         <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
         <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

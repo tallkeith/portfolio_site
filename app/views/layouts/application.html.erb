@@ -4,93 +4,96 @@
   <title>Tall Keith | Ruby on Rails Developer</title>
   <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
-<body>
- <div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
+
+ <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/blogs/home">TallKeith</a>
+      <a class="navbar-brand" href="/welcome/splash">TallKeith</a>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><li><%= link_to "Contributors", blogs_path%></li>
+        <li class="active"><li><%= link_to "Home", blogs_home_path%></li>
+        <li><%= link_to "Projects", blogs_samplejson_path%></li>
         <li><%= link_to "Posts", blog_posts_path%></li>
         <li><%= link_to "About This Blog", blogs_about_me_path%></li>
         <li><%= link_to "Contact Me", blogs_contact_me_path%></li>
-        <form class="form-inline" role="form">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputPassword2">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Remember me
-          </label>
-        </div>
-        <button type="submit" class="btn btn-default">Sign in</button>
-      </form>
+      </ul>
+
       <% if user_signed_in? %>
 
-		  <%= link_to "Sgn out",destroy_user_session_path, method: :delete, class: "button" %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-right">
+            <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "button" %>
+          </li>
+        </ul>
 
 		  <% else %>
 
-		  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		  <%= f.label :email %>
-		  <%= f.email_field :email, autofocus: true %>
-
-		  <%= f.label :password %>
-		    <%= f.password_field :password, autocomplete: "off" %>
-
-		  <% if devise_mapping.rememberable? -%>
-		    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-		  <% end -%>
-
-		  <%= f.submit "Sign in" %>
-    <!--/.nav-collapse -->
-	    
-
-		  
-		
-	</div>
-<% end %>
-  <% end %>
-
- </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">Sign in<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+  		        <li>
+                <div class="form-group mydrop">
+                    <p>Log in</p>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <div class="form-group mydrop">
+                        <%= f.email_field :email, :placeholder => "Email", size: 31, autofocus: true %>
+                      </div>
+                      <div class="form-group mydrop">
+                        <%= f.password_field :password, :placeholder => "Password", size: 31,autocomplete: "off" %>
+                      </div>
+                      <div class="remember mydrop">
+                        <% if devise_mapping.rememberable? -%>
+                          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                        <% end -%>
+                      </div>
+                      <div class="mydrop">
+                        <%= f.submit "Sign in" %>
+                      </div>
+                      <div class="mydrop">
+                        <%= render "devise/shared/links" %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+ </nav>
   </div>
 </div>
 
-<div class="container">
-  
-  <div class="text-center">
-    <h1>I'm tall. I'm Keith.</h1>
-    <p class="lead">I'm Tall Keith, the Ruby on Rails Developer.</p>
-  </div>
-  
-</div><!-- /.container -->
+<br><br><br>
+<body>
+</body>
 
-<%= yield %>
+
 <div class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -99,18 +102,21 @@
     </div>
     <div class="collapse navbar-collapse">
       <a class="navbar-brand navbar-nav pull-left">&copy; 2014 Keith Nash</a>
-      <ul>
+      <form class="form-inline" role="form">
+  
+        <ul>
 	        <li class="navbar-nav pull-right"><%= link_to image_tag("Twitter-icon 45x45.jpg"), "http://twitter.com/TallestKeith"%></li>
 	      	<li class="navbar-nav pull-right"><%= link_to image_tag("Facebook-icon 45x45.jpg"), "http://facebook.com/tallestkeith"%></li>
 	      	<li class="navbar-nav pull-right"><%= link_to image_tag("Github-icon 45x45.jpg"), "http://github.com/tallkeith"%></li>
 	      	<li class="navbar-nav pull-right"><%= link_to image_tag("Linkedin-icon 45x45.jpg"), "http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/"%></li>
+        </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
-</body>
 
-<br><br><br><br>
 
-	
+
+
+	<%= yield %>
  
 </html>

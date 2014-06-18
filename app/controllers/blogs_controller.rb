@@ -1,6 +1,19 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
+
+require 'open-uri'
+require 'json'
+
+  def home
+    @results = JSON.parse(open("http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus").read)
+        
+  end
+
+  def samplejson
+    @results = JSON.parse(open("http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus").read)
+        
+  end
   # GET /blogs
   # GET /blogs.json
   def index

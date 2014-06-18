@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'welcome/splash'
+
+  get 'blogs/samplejson'
+
   get 'blogs/ajax'
 
   get 'users/show_users'
 
-  root'blogs#home'
+  root'welcome#splash'
 
   get 'blogs/about_me'
 
@@ -15,6 +19,9 @@ Rails.application.routes.draw do
   post 'blogs/new'
 
   post 'blog_posts/new'
+
+  get 'welcome/projects'
+
 
   devise_for :users
 

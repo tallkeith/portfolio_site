@@ -1,0 +1,7 @@
+<h1>There are <%=@results.count%> MARTA busses running</h1>
+<br><br>
+
+<%@results.each do |result|%>
+	Latitude: <%=result['LATITUDE']%><br>
+	Longitude: <%=result['LONGITUDE']%><br>
+<%end%>

@@ -2,7 +2,7 @@ class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   include BlogPostsHelper
   # GET /blog_posts
   # GET /blog_posts.json
@@ -15,6 +15,7 @@ class BlogPostsController < ApplicationController
   def show
     @blog_comment = BlogComment.new
   end
+
 
   # GET /blog_posts/new
   def new
