@@ -13,6 +13,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'gmaps4rails'
 gem 'geocoder'
 
+group :development do 
+	gem 'pry-rails'
+	
+end
+
 # Bootstrap
 gem 'bootstrap-sass'
 

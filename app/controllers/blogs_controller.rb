@@ -13,10 +13,10 @@ require 'json'
   def samplejson
     @results = JSON.parse(open("http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus").read)
         
-    geocode = Geocoder.search(@results)
-    @hash = Gmaps4rails.build_markers(geocode) do |result, marker|
-      marker.lat result.latitude
-      marker.lng result.longitude
+      
+      @hash = Gmaps4rails.build_markers(@results) do |results, marker|
+      marker.lat results['LATITUDE']
+      marker.lng results['LONGITUDE']
     end
   end
   # GET /blogs
