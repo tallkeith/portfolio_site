@@ -1,28 +1,5 @@
-== README
+# My Awesome Portfolio site.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I have been working on this site for quite a while now. It will go through constant iterations and change quite frequently.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+There are a few pages of interest, namely the MARTA app I built. It shows the location of every MARTA bus running at that time on a google map. Oh yeah, I also used Gmaps4Rails in this app.
