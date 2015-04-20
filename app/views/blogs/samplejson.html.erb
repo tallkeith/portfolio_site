@@ -3,10 +3,11 @@
 <script src="//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry" type="text/javascript"></script>
 
 <h1>There are <%=@results.count%> MARTA busses running</h1>
+<h4>(Please refresh your briwser if you do not see the map)</h4>
 <br><br>
 
 <div class="mapbox">
-	<div style='width: 40%;'>
+	<div class="center-block">
 	  <div id="multi_markers" style='width: 600px; height: 400px;'></div>
 	</div>
 </div>
@@ -15,8 +16,8 @@
 		var handler = Gmaps.build('Google',
 			{markers:
           {clusterer: {
-            gridSize: 40,
-            maxZoom: 10,
+            gridSize: 50,
+            maxZoom: 12,
             
             }}}
 			);

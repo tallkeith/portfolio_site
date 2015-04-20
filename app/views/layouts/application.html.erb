@@ -31,11 +31,10 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><li><%= link_to "Home", blogs_home_path%></li>
-        <li><%= link_to "Projects", blogs_samplejson_path%></li>
+        <li class="active"><li><%= link_to "Projects", blogs_samplejson_path%></li>
         <li><%= link_to "Posts", blog_posts_path%></li>
         <li><%= link_to "About This Blog", blogs_about_me_path%></li>
-        <li><%= link_to "Contact Me", blogs_contact_me_path%></li>
+        <li><%= mail_to("tallestkeith@gmail.com", name = "Contact")%></li>
       </ul>
 
       <% if user_signed_in? %>
