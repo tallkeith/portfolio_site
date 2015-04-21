@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'welcome/projects'
 
+  get 'welcome/galapagos'
+
 
   devise_for :users
 

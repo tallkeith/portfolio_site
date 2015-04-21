@@ -1,6 +1,15 @@
 
 <h1>ERMAGERD!!! Projects!!!</h1>
 
+<hr />
+<br />
 
+<div class="col-md-4">
+	<%= link_to image_tag("MARTA.png", class: "img-circle img-responsive"), blogs_samplejson_path %>
+</div>
 
-projects.html.erb
+<div class="col-md-8 text-left">
+	<h3><%= link_to "Where are the MARTA Busses?", blogs_samplejson_path %></h3>
+		<p>This nifty little app will show you every single MARTA bus in service at that time. Sometimes, the MARTA API provides some wacky data <%= link_to "(A bus in the middle of the ocean?)", welcome_galapagos_path %>, which can be thoroughly entertaining. Unless, of course the bus you are waiting on is off the coast of the Galapagos Islands.</p>
+		<p>Built with <%= link_to "Gmaps4Rails", "http://apneadiving.github.io/" %>, this app makes a json call to the <%= link_to "MARTA API", "http://www.itsmarta.com/developers/default.aspx"%> and returns the Lattitude and Longitude of the busses. Then, these points are plotted on a customized google map. </p>
+</div>
