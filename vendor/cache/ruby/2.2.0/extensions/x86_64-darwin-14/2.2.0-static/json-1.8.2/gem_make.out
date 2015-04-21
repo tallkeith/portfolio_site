@@ -1,0 +1,9 @@
+/Users/macboookpro/.rbenv/versions/2.2.1/bin/ruby -r ./siteconf20150421-7749-4k1zui.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install
