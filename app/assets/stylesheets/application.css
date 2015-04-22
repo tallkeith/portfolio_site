@@ -16,7 +16,7 @@
 
 body {
 
-  background: image_url('forrestedRoadBW.jpg') no-repeat center center fixed; 
+  background: url('forrestedRoadBW.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
