@@ -12,7 +12,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'gmaps4rails'
 gem 'geocoder'
 
-group :development do 
+# Mail gems
+gem 'mail_form'
+gem 'simple_form'
+
+group :development, :test do 
+	gem 'foreman'
 	gem 'pry-rails'
 	gem 'sqlite3'
 end
