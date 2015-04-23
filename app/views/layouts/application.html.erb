@@ -36,6 +36,14 @@
         <li><%= link_to "About This Blog", blogs_about_me_path%></li>
         <li><%= mail_to("tallestkeith@gmail.com", name = "Contact")%></li>
       </ul>
+      <div class="navbar-nav navbar-right">
+        <ul class="list-inline">
+          <li><%= link_to image_tag("Twitter-icon 45x45.jpg"), "http://twitter.com/TallestKeith"%></li>
+          <li><%= link_to image_tag("Facebook-icon 45x45.jpg"), "http://facebook.com/tallestkeith"%></li>
+          <li><%= link_to image_tag("Github-icon 45x45.jpg"), "http://github.com/tallkeith"%></li>
+          <li><%= link_to image_tag("Linkedin-icon 45x45.jpg"), "http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/"%></li>
+      </div>
+    </div>
 
      <!--  <% if user_signed_in? %>
 
@@ -87,37 +95,6 @@
 
 
 <%= yield %>
-
-<!-- Footer -->
-
-<div class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-    </div>
-    <div class="collapse navbar-collapse">
-      <a class="navbar-brand navbar-nav pull-left">&copy; 2014 Keith Nash</a>
-      <form class="form-inline" role="form">
-  
-        <ul>
-	        <li class="navbar-nav pull-right"><%= link_to image_tag("Twitter-icon 45x45.jpg"), "http://twitter.com/TallestKeith"%></li>
-	      	<li class="navbar-nav pull-right"><%= link_to image_tag("Facebook-icon 45x45.jpg"), "http://facebook.com/tallestkeith"%></li>
-	      	<li class="navbar-nav pull-right"><%= link_to image_tag("Github-icon 45x45.jpg"), "http://github.com/tallkeith"%></li>
-	      	<li class="navbar-nav pull-right"><%= link_to image_tag("Linkedin-icon 45x45.jpg"), "http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/"%></li>
-        </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
-
-
-
-
 	
  </body>
 </html>
