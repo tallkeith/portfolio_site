@@ -1,26 +1,144 @@
+<!-- jumbotron -->
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-left">I'm Tall. I'm Keith. </h1>
+    <h2 class="text-left">I'm TallKeith, the Ruby on Rails developer</h2>
+  </div> <!-- end container -->
+
+</div> <!-- end jumbotron -->
+
+<div class="cover-container">
+  <section>
+    <div class="page-header" id="welcome_blurb">
+      <p class="lead">Thank you for visiting my page! Feel free to poke around and check out my work. This page is a work in progress, so check back often for updates. There are several projects in the works!</p>
+       
+      <a href="https://github.com/tallkeith/portfolio_site" target="_blank" class="btn btn-lg btn-primary">Github Repo for This Page</a>
+  </div>
+  </section>
+</div>
+
+<div class="container"> <!-- Projects Container -->
+  <section>
+    <div class="page-header" id="projects">
+      <h2>Projects <small>Check out my awesome projects!</small></h2>
+    </div>
+    <div class-"row">
+      <div class="col-md-4">
+        <blockquote>
+        <%= link_to image_tag("MARTA.png", class: "img-responsive"), blogs_samplejson_path, :target => "_blank" %>
+        
+          <h3><u><%= link_to "Where are the MARTA Buses?", blogs_samplejson_path, :target => "_blank" %></u></h3>
+        <p class="text-justify">This nifty little app will show you every single MARTA bus in service at that time. Sometimes, the MARTA API provides some wacky data <u><%= link_to "(A bus in the middle of the ocean?)", welcome_galapagos_path, :target => "_blank" %></u>, which can be thoroughly entertaining. Unless, of course the bus you are waiting on is off the coast of the Galapagos Islands. Parts of this app were built as a project while at <u><%= link_to "Tech Talent South", "http://techtalentsouth.com/", :target => "_blank" %></u>.</p>
+        <p class="text-justify">Built with <u><%= link_to "Gmaps4Rails", "http://apneadiving.github.io/", :target => "_blank" %></u>, this app makes a JSON call to the <u><%= link_to "MARTA API", "http://www.itsmarta.com/developers/default.aspx", :target => "_blank"%></u> and returns the lattitude and longitude of the buses. Then, these points are plotted on a customized google map. </p>
+        <h4></h4>
+          <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/portfolio_site/blob/master/app/views/blogs/samplejson.html.erb", :target => "_blank" %></u></footer>
+        </blockquote> 
+      </div>
+      <div class="col-md-4">
+        <blockquote>
+          <%= link_to image_tag("bakersfield.png", class: "img-responsive"), "http://bakersfieldhomeworth.herokuapp.com", :target => "_blank" %>
+          <h3><u><%= link_to "What is your home REALLY worth?", "http://bakersfieldhomeworth.herokuapp.com", :target => "_blank" %></u></h3>
+            <p class="text-justify">A realtor in California asked me to create an app that would allow potential customers to find out how much their home was worth. Along with an eye catching design, this app features a custom postgres interface, allowing the realtor to see the leads in a table.</p>
+            <p class="text-justify">Built with <u><%= link_to "JQuery-Datatables-Rails", "https://github.com/rweng/jquery-datatables-rails", :target => "_blank" %></u>, <u><%= link_to "Rubillow", "https://github.com/synewaves/rubillow", :target => "_blank" %></u>, and <u><%= link_to "Gmaps4Rails", "http://apneadiving.github.io/", :target => "_blank" %></u>, this app first asks for the desired address, then shows the user a map of the address and asks them for their contact information. After they enter their info, the value of the house is shown and an email is sent to the user as well as the realtor.</p>
+          
+          <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/realtor", :target => "_blank" %></u></footer>
+        </blockquote> 
+      </div>
+      <div class="col-md-4">
+        <blockquote>
+          <%= link_to image_tag("pinteresting.png", class: "img-responsive"), "http://tallpins.herokuapp.com", :target => "_blank" %>
+          <h3><u><%= link_to "Pinterested? ", "http://tallpins.herokuapp.com", :target => "_blank" %></u></h3>
+          <p class="text-justify">When you just can't get enough pinterest, what should you do? Why, build your own Pinterest app, of course. The app utilizes <u><%= link_to "Paperclip", "https://github.com/thoughtbot/paperclip", :target => "_blank" %></u>, <u><%= link_to "Amazon Web Services", "http://aws.amazon.com", :target => "_blank" %></u> for image hosting, as well as <u><%= link_to "Devise", "https://github.com/plataformatec/devise", :target => "_blank" %></u> for user authentication. Feel free to browse the pictures that have been posted. If you are feeling frisky, you can go ahead and create an account and upload some fun pictures yourself!</p>
+          <p class="text-justify">The front end was developed using <u><%= link_to "Twitter Bootstrap", "http://getbootstrap.com", :target => "_blank" %></u> with just a touch of Javascript thrown in for good measure. This app was built as a part of the <u><%= link_to "One Month Rails", "https://onemonth.com/courses/one-month-rails/", :target => "_blank" %></u> course.</p>
+          
+          <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/pinteresting", :target => "_blank" %></u></footer>
+        </blockquote> 
+      </div>
+    </div> <!-- End Row -->
+  </section>
+</div> <!-- End Projects Container -->
 
 
-<div class="site-wrapper">
-
-  <div class="site-wrapper-inner">
-
-    <div class="cover-container">
-
-      <div class="inner cover">
-        <h1 class="cover-heading">I'm Tall. I'm Keith. I'm TallKeith, the Ruby on Rails developer</h1>
-        <p class="lead">Thank you for visiting my page! Feel free to poke around and check out my work. This page is a work in progress, so check back often for updates. There are several projects in the works!</p>
-        <p class="lead">
-          <a href="/welcome/projects" class="btn btn-lg btn-success">Projects</a> |
-          <a href="/blogs/about_me" class="btn btn-lg btn-primary">About Me</a>
-        </p>
+<!-- Carousel -->
+   <div class="container">
+    <section>
+      <div class="page-header" id="gallery">
+        <h2>Gallery <small>Check out the awesome Carousel</small></h2>
       </div>
 
-     
+      <div class="carousel slide" data-ride="carousel" id="screenshot-carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#screenshot-carousel" data-slide-to="1"></li>
+          <li data-target="#screenshot-carousel" data-slide-to="2"></li>
+          <li data-target="#screenshot-carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active"> <!-- Carousel picture 1-->
+            <%= image_tag "Carousel_at_Hyde_Park.jpg", alt: "The Carousel at Hyde Park", size: "800x400"%>
+            <div class="carousel-caption"> <!-- Carousel Caption -->
+              <h3>Carousel at Hyde Park</h3>
+              <p>This is in London, England</p>
+            </div> <!-- End Carousel Caption -->
+          </div> <!-- end carousel picture 1 -->
 
-    </div>
+          <div class="item">
+            <%= image_tag "Golden_Carousel.jpg", alt: "Golden Carousel", size: "800x400" %>
+              <div class="carousel-caption"> <!-- Carousel Caption -->
+                  <h3>Golden Carousel</h3>
+                  <p>I imagine a carousel made of gold would be too heavy to turn</p>
+              </div> <!-- End Carousel Caption -->
+          </div>
 
-  </div>
+          <div class="item">
+            <%= image_tag "Japan_carousel.jpg", alt: "A Carousel in Japan", size: "800x400" %>
+              <div class="carousel-caption"> <!-- Carousel Caption -->
+                <h3>Everyone likes a Carousel!</h3>
+                <p>This one is in Japan</p>
+              </div> <!-- End Carousel Caption -->
+          </div>
 
-</div>
+          <div class="item">
+            <%= image_tag "Paris Carousel.jpg", alt: "Roman Carousel Horse", size: "800x400" %>
+              <div class="carousel-caption"> <!-- Carousel Caption -->
+                <h3>Carousel in Paris</h3>
+                <p>The carousel of love</p>
+              </div> <!-- End Carousel Caption -->
+          </div>
+
+        </div> <!-- End Carousel Inner -->
+        <!-- Carousel arrows -->
+          <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+
+      </div> <!-- End Carousel -->
+    </section>
+  </div> <!-- End Container -->
+<!-- call to action -->
+    <section>
+      <div class="well">
+        <div class="container text-center">
+          <h3>Subscribe for more free stuff</h3>
+          <p>Enter your name and email</p>
+
+          <form action="" class="form-inline">
+            <div class="form-group">
+              <label for="subscription">Subscribe</label>
+              <input type="text" class="form-control" id="subscription" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="text" class="form-control" id="email" placeholder="Enter Your Email">
+            </div>
+          </form>
+          <hr>
+
+        </div> <!-- End Container -->
+      </div> <!-- end well -->
+    </section>
 
 <%yield%>

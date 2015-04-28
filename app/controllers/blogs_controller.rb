@@ -17,8 +17,12 @@ require 'json'
       @hash = Gmaps4rails.build_markers(@results) do |results, marker|
       marker.lat results['LATITUDE']
       marker.lng results['LONGITUDE']
+      marker.infowindow results['DIRECTION']
+
     end
   end
+
+
   # GET /blogs
   # GET /blogs.json
   def index
