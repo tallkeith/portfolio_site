@@ -1,69 +1,294 @@
-<!-- jumbotron -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>I'm Tall. I'm Keith. </h1>
-    <h2>I'm TallKeith, the Ruby on Rails developer</h2>
-  </div> <!-- end container -->
-
-</div> <!-- end jumbotron -->
-
-<div class="cover-container">
-  <section>
-    <div class="page-header" id="welcome_blurb">
-      <p class="lead">Thank you for visiting my page! Feel free to poke around and check out my work. This page is a work in progress, so check back often for updates. There are several projects in the works!</p>
-       
-      <a href="https://github.com/tallkeith/portfolio_site" target="_blank" class="btn btn-lg btn-primary">Github Repo for This Page</a>
-  </div>
-  </section>
-</div>
-
-<div class="container"> <!-- Projects Container -->
-  <section>
-    <div class="page-header" id="projects">
-      <h2>Projects <small>Check out my awesome projects!</small></h2>
+<!-- Nav Bar Top -->
+ <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" id="my-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "TallKeith", welcome_splash_path, class: "navbar-brand" %>
     </div>
-    <div class-"row">
-      <div class="col-md-4">
-        <blockquote>
-        <%= link_to image_tag("MARTA.png", class: "img-responsive"), blogs_samplejson_path, :target => "_blank" %>
-        
-          <h3><u><%= link_to "Where are the MARTA Buses?", blogs_samplejson_path, :target => "_blank" %></u></h3>
-        <p class="text-justify">This nifty little app will show you every single MARTA bus in service at that time. Sometimes, the MARTA API provides some wacky data <u><%= link_to "(A bus in the middle of the ocean?)", welcome_galapagos_path, :target => "_blank" %></u>, which can be thoroughly entertaining. Unless, of course the bus you are waiting on is off the coast of the Galapagos Islands. Parts of this app were built as a project while at <u><%= link_to "Tech Talent South", "http://techtalentsouth.com/", :target => "_blank" %></u>.</p>
-        <p class="text-justify">Built with <u><%= link_to "Gmaps4Rails", "http://apneadiving.github.io/", :target => "_blank" %></u>, this app makes a JSON call to the <u><%= link_to "MARTA API", "http://www.itsmarta.com/developers/default.aspx", :target => "_blank"%></u> and returns the lattitude and longitude of the buses. Then, these points are plotted on a customized google map. </p>
-        <h4></h4>
-          <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/portfolio_site/blob/master/app/views/blogs/samplejson.html.erb", :target => "_blank" %></u></footer>
-        </blockquote> 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#projects">Projects</a></li>
+        <!-- <li><%= link_to "Posts", blog_posts_path%></li> -->
+        <li><a href="#aboutme">About This Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#gallery">Carousel</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-nav navbar-right">
+        <ul class="list-inline">
+          <li><%= link_to image_tag("Github-icon 45x45.jpg"), "http://github.com/tallkeith", :target =>"_blank" %></li>
+          <li><%= link_to image_tag("Linkedin-icon 45x45.jpg"), "http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/", :target =>"_blank" %></li>
+          <li><%= link_to image_tag("Twitter-icon 45x45.jpg"), "http://twitter.com/TallestKeith", :target =>"_blank" %></li>
+          <li><i class="icon-linkedin-sign icon-large"><%= link_to image_tag("Facebook-icon 45x45.jpg"), "http://facebook.com/tallestkeith", :target =>"_blank" %></i></li>
+          </ul>          
       </div>
-      <div class="col-md-4">
-        <blockquote>
-          <%= link_to image_tag("bakersfield.png", class: "img-responsive"), "http://bakersfieldhomeworth.herokuapp.com", :target => "_blank" %>
-          <h3><u><%= link_to "What is your home REALLY worth?", "http://bakersfieldhomeworth.herokuapp.com", :target => "_blank" %></u></h3>
-            <p class="text-justify">A realtor in California asked me to create an app that would allow potential customers to find out how much their home was worth. Along with an eye catching design, this app features a custom postgres interface, allowing the realtor to see the leads in a table.</p>
-            <p class="text-justify">Built with <u><%= link_to "JQuery-Datatables-Rails", "https://github.com/rweng/jquery-datatables-rails", :target => "_blank" %></u>, <u><%= link_to "Rubillow", "https://github.com/synewaves/rubillow", :target => "_blank" %></u>, and <u><%= link_to "Gmaps4Rails", "http://apneadiving.github.io/", :target => "_blank" %></u>, this app first asks for the desired address, then shows the user a map of the address and asks them for their contact information. After they enter their info, the value of the house is shown and an email is sent to the user as well as the realtor.</p>
-          
-          <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/realtor", :target => "_blank" %></u></footer>
-        </blockquote> 
-      </div>
-      <div class="col-md-4">
-        <blockquote>
-          <%= link_to image_tag("pinteresting.png", class: "img-responsive"), "http://tallpins.herokuapp.com", :target => "_blank" %>
-          <h3><u><%= link_to "Pinterested? ", "http://tallpins.herokuapp.com", :target => "_blank" %></u></h3>
-          <p class="text-justify">When you just can't get enough pinterest, what should you do? Why, build your own Pinterest app, of course. The app utilizes <u><%= link_to "Paperclip", "https://github.com/thoughtbot/paperclip", :target => "_blank" %></u>, <u><%= link_to "Amazon Web Services", "http://aws.amazon.com", :target => "_blank" %></u> for image hosting, as well as <u><%= link_to "Devise", "https://github.com/plataformatec/devise", :target => "_blank" %></u> for user authentication. Feel free to browse the pictures that have been posted. If you are feeling frisky, you can go ahead and create an account and upload some fun pictures yourself!</p>
-          <p class="text-justify">The front end was developed using <u><%= link_to "Twitter Bootstrap", "http://getbootstrap.com", :target => "_blank" %></u> with just a touch of Javascript thrown in for good measure. This app was built as a part of the <u><%= link_to "One Month Rails", "https://onemonth.com/courses/one-month-rails/", :target => "_blank" %></u> course.</p>
-          
-          <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/pinteresting", :target => "_blank" %></u></footer>
-        </blockquote> 
-      </div>
-    </div> <!-- End Row -->
-  </section>
-</div> <!-- End Projects Container -->
+    </div>
 
+
+  <!-- User Sign in to be implemented later -->
+       <!--  <% if user_signed_in? %>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-right">
+              <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "button" %>
+            </li>
+          </ul>
+
+        <% else %>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Sign in<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="form-group mydrop">
+                      <p>Log in</p>
+                      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <div class="form-group mydrop">
+                          <%= f.email_field :email, :placeholder => "Email", size: 31, autofocus: true %>
+                        </div>
+                        <div class="form-group mydrop">
+                          <%= f.password_field :password, :placeholder => "Password", size: 31,autocomplete: "off" %>
+                        </div>
+                        <div class="remember mydrop">
+                          <% if devise_mapping.rememberable? -%>
+                            <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                          <% end -%>
+                        </div>
+                        <div class="mydrop">
+                          <%= f.submit "Sign in" %>
+                        </div>
+                        <div class="mydrop">
+                          <%= render "devise/shared/links" %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+      </div> -->
+
+    </div>
+  </div>
+ </nav> 
+<!-- End Nav -->
+
+
+<!-- jumbotron -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>I'm Tall. I'm Keith. </h1>
+      <h2>I'm TallKeith, the Ruby on Rails developer</h2>
+    </div> <!-- end container -->
+
+  </div> 
+<!-- end jumbotron -->
+
+<!-- Welcome Blurb -->
+  <div class="cover-container">
+    <section>
+      <div class="page-header" id="welcome_blurb">
+        <p class="lead">Thank you for visiting my page! Feel free to poke around and check out my work. This page is a work in progress, so check back often for updates. There are several projects in the works!</p>
+         
+        <a href="https://github.com/tallkeith/portfolio_site" target="_blank" class="btn btn-lg btn-primary">Github Repo for This Page</a>
+    </div>
+    </section>
+  </div>
+<!-- end welcome blurb -->
+
+<!-- Projects -->
+  <div class="container"> <!-- Projects Container -->
+    <section>
+      <div class="page-header" id="projects">
+        <h2>Projects <small>Check out my awesome projects!</small></h2>
+      </div>
+      <div class-"row">
+        <div class="col-sm-4">
+          <blockquote>
+          <%= link_to image_tag("MARTA.png", class: "img-responsive"), blogs_samplejson_path, :target => "_blank" %>
+          
+            <h3><u><%= link_to "Where are the MARTA Buses?", blogs_samplejson_path, :target => "_blank" %></u></h3>
+          <p class="text-justify">This nifty little app will show you every single MARTA bus in service at that time. Sometimes, the MARTA API provides some wacky data <u><%= link_to "(A bus in the middle of the ocean?)", welcome_galapagos_path, :target => "_blank" %></u>, which can be thoroughly entertaining. Unless, of course the bus you are waiting on is off the coast of the Galapagos Islands. Parts of this app were built as a project while at <u><%= link_to "Tech Talent South", "http://techtalentsouth.com/", :target => "_blank" %></u>.</p>
+          <p class="text-justify">Built with <u><%= link_to "Gmaps4Rails", "http://apneadiving.github.io/", :target => "_blank" %></u>, this app makes a JSON call to the <u><%= link_to "MARTA API", "http://www.itsmarta.com/developers/default.aspx", :target => "_blank"%></u> and returns the lattitude and longitude of the buses. Then, these points are plotted on a customized google map. </p>
+          <h4></h4>
+            <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/portfolio_site/blob/master/app/views/blogs/samplejson.html.erb", :target => "_blank" %></u></footer>
+          </blockquote> 
+        </div>
+        <div class="col-sm-4">
+          <blockquote>
+            <%= link_to image_tag("bakersfield.png", class: "img-responsive"), "http://bakersfieldhomeworth.herokuapp.com", :target => "_blank" %>
+            <h3><u><%= link_to "What is your home REALLY worth?", "http://bakersfieldhomeworth.herokuapp.com", :target => "_blank" %></u></h3>
+              <p class="text-justify">A realtor in California asked me to create an app that would allow potential customers to find out how much their home was worth. Along with an eye catching design, this app features a custom postgres interface, allowing the realtor to see the leads in a table.</p>
+              <p class="text-justify">Built with <u><%= link_to "JQuery-Datatables-Rails", "https://github.com/rweng/jquery-datatables-rails", :target => "_blank" %></u>, <u><%= link_to "Rubillow", "https://github.com/synewaves/rubillow", :target => "_blank" %></u>, and <u><%= link_to "Gmaps4Rails", "http://apneadiving.github.io/", :target => "_blank" %></u>, this app first asks for the desired address, then shows the user a map of the address and asks them for their contact information. After they enter their info, the value of the house is shown and an email is sent to the user as well as the realtor.</p>
+            
+            <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/realtor", :target => "_blank" %></u></footer>
+          </blockquote> 
+        </div>
+        <div class="col-sm-4">
+          <blockquote>
+            <%= link_to image_tag("pinteresting.png", class: "img-responsive"), "http://tallpins.herokuapp.com", :target => "_blank" %>
+            <h3><u><%= link_to "Pinterested? ", "http://tallpins.herokuapp.com", :target => "_blank" %></u></h3>
+            <p class="text-justify">When you just can't get enough pinterest, what should you do? Why, build your own Pinterest app, of course. The app utilizes <u><%= link_to "Paperclip", "https://github.com/thoughtbot/paperclip", :target => "_blank" %></u>, <u><%= link_to "Amazon Web Services", "http://aws.amazon.com", :target => "_blank" %></u> for image hosting, as well as <u><%= link_to "Devise", "https://github.com/plataformatec/devise", :target => "_blank" %></u> for user authentication. Feel free to browse the pictures that have been posted. If you are feeling frisky, you can go ahead and create an account and upload some fun pictures yourself!</p>
+            <p class="text-justify">The front end was developed using <u><%= link_to "Twitter Bootstrap", "http://getbootstrap.com", :target => "_blank" %></u> with just a touch of Javascript thrown in for good measure. This app was built as a part of the <u><%= link_to "One Month Rails", "https://onemonth.com/courses/one-month-rails/", :target => "_blank" %></u> course.</p>
+            
+            <footer><u><%= link_to "Check out the code on Github!", "https://github.com/tallkeith/pinteresting", :target => "_blank" %></u></footer>
+          </blockquote> 
+        </div>
+      </div> <!-- End Row -->
+    </section>
+  </div> 
+<!-- End Projects Container -->
+
+<!-- About Me -->
+  <div class="container">
+    <section>
+      <div class="page-header" id="aboutme">
+        <h2>About Me <small>My TALL Tale</small></h2>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <h3>This is the heading</h3>
+          <p class="text-justify ">I am Keith. I am really big. Tall is more of an aspiration or a goal of mine. See, when a large person enters a room, some people look at them and think, “Wow, that’s a big dude!” or “Wow, that’s a tall dude!” I am working on my fitness so that when I enter a room, people think the latter.</p>
+
+          <p class="text-justify">This blog is about me and my journey to a new career as a web developer. I learned Ruby on Rails at <u><%= link_to "Tech Talent South", "http://techtalentsouth.com/", :target => "_blank" %></u> in Atlanta from a great teacher named <u><%= link_to "TJ Muehleman", "https://twitter.com/tjmule", :target => "_blank" %></u>. Some of my personal stories might creep in from time to time, so forgive me if that is a little less technical than you were expecting.</p>
+
+          <p class="text-justify">The idea is for me to post my code examples here as a sort of evolving portfolio for potential employers to see where my skills started, where they have gone, and the direction they are taking. Any potential employers, please feel free to send me emails and make high paying job offers.</p>
+
+          <p class="text-justify">If you would like to see some more of my work, please visit my <%=link_to "Github Repo", ("http://www.github.com/tallkeith"), class: "btn btn-success", :target => "_blank"%> and be sure to add me on <%=link_to "LinkedIn", ('http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/'), class: "btn btn-primary", :target => "_blank" %></p>
+          <p class="text-justify">I like Bacon, Star Wars, Zombies, and Cake. I will go to great lengths for cake. I attend weddings of people I do not like, because I know there will be cake there.</p>
+        </div>
+
+        <div class="col-sm-4">
+          <%=image_tag ("Keith with sunglasses.jpg"), class: "img-responsive center-block", width: "300"%>
+        </div>
+      </div> <!-- End Row -->
+
+      <hr>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>This is the Heading</h4>
+              <p>Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey.</p>
+
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>This is the Heading</h4>
+              <p>Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey.</p>
+
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>This is the Heading</h4>
+              <p>Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey.</p>
+
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div>
+
+      </div> <!-- End row -->
+
+    </section>
+  </div> <!-- end container -->
+<!-- End features -->
+
+
+
+<!-- FAQ -->
+    <div class="container">
+      <section>
+        <div class="page-header" id="faq">
+          <h2>FAQ <small>Those things that inquiring minds want to know</small></h2>
+        </div> <!-- End Page Header -->
+
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-1" data-toggle="collapse" data-parent="#accordion">
+                  <h4>Wow! This is an awesome webpage!</h4>
+                </a>
+              </div> <!-- End panel title -->
+              <div id="collapse-1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <p class="text-justify">Thanks! I put a lot of time and effort into it. However, technically, that isn't really a question.
+                  </p>
+                </div>
+              </div><!-- End Panel Collapse -->
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-2" data-toggle="collapse" data-parent="#accordion">
+                  <h4>Are you available for hire?</h4>
+                </a>
+              </div> <!-- End panel title -->
+              <div id="collapse-2" class="panel-collapse collapse">
+                <div class="panel-body ">
+                  <p class="text-justify">That Depends on how long it has been since I have updated this webapge. Currently, I am entertaining offers of employment, as well as freelance project opportunities. Hop on down to the contact section and reach out to me. I would love to hear about your project and figure out how I can help contribute.</p>
+                </div>
+              </div><!-- End Panel Collapse -->
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-3" data-toggle="collapse" data-parent="#accordion">
+                  <h4>Are you available for hire?</h4>
+                </a>
+              </div> <!-- End panel title -->
+              <div id="collapse-3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p class="text-justify">Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey. Venison flank sirloin kielbasa short ribs frankfurter turducken cow beef ribs hamburger. Sausage meatball strip steak, pork loin leberkas hamburger chuck andouille ground round doner prosciutto fatback. Leberkas rump ball tip meatball, andouille shank fatback cupim pork chop tongue shoulder. Ham tongue jowl, tenderloin flank beef ribs ribeye boudin fatback porchetta cupim corned beef jerky. Boudin chuck porchetta, venison shank shoulder alcatra jowl ground round.</p>
+                </div>
+              </div> <!-- End Panel Collapse -->
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-4" data-toggle="collapse" data-parent="#accordion">
+                  <h4>TallKeith, huh? Exactly how tall are you?</h4>
+                </a>
+              </div> <!-- End panel title -->
+              <div id="collapse-4" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p class="text-justify">I am tall. Like, really tall. I am between 6'4 and 6'9, depending on which convenience store I am walking out of. TallKeith is the internet moniker I have come up with to make myself more memorble. When you meet me, it is easier for you to recall the tall guy you met.</p>
+                </div>
+              </div><!-- End Panel Collapse -->
+            </div>
+          </div>
+
+        </div>
+<!-- End FAQ -->
 
 <!-- Carousel -->
    <div class="container">
     <section>
       <div class="page-header" id="gallery">
-        <h2>Gallery <small>Check out the awesome Carousel</small></h2>
+        <h2>Carousel <small>Hey Look! I made a carousel of carousels!</small></h2>
       </div>
 
       <div class="carousel slide" data-ride="carousel" id="screenshot-carousel">
@@ -119,79 +344,26 @@
       </div> <!-- End Carousel -->
     </section>
   </div> 
+  <br>
 
-  <!-- End Container --><!-- FAQ -->
-    <div class="container">
-      <section>
-        <div class="page-header" id="faq">
-          <h2>FAQ <small>Engaging with consumers</small></h2>
-        </div> <!-- End Page Header -->
-
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">
-                <a href="#collapse-1" data-toggle="collapse" data-parent="#accordion">
-                  Question one?
-                </a>
-              </div> <!-- End panel title -->
-              <div id="collapse-1" class="panel-collapse collapse in">
-                <div class="panel-body">
-                  <p class="text-justify">Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey. Venison flank sirloin kielbasa short ribs frankfurter turducken cow beef ribs hamburger. Sausage meatball strip steak, pork loin leberkas hamburger chuck andouille ground round doner prosciutto fatback. Leberkas rump ball tip meatball, andouille shank fatback cupim pork chop tongue shoulder. Ham tongue jowl, tenderloin flank beef ribs ribeye boudin fatback porchetta cupim corned beef jerky. Boudin chuck porchetta, venison shank shoulder alcatra jowl ground round.</p>
-                </div>
-              </div><!-- End Panel Collapse -->
-            </div>
-          </div>
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">
-                <a href="#collapse-2" data-toggle="collapse" data-parent="#accordion">
-                  Question two?
-                </a>
-              </div> <!-- End panel title -->
-              <div id="collapse-2" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <p class="text-justify">Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey. Venison flank sirloin kielbasa short ribs frankfurter turducken cow beef ribs hamburger. Sausage meatball strip steak, pork loin leberkas hamburger chuck andouille ground round doner prosciutto fatback. Leberkas rump ball tip meatball, andouille shank fatback cupim pork chop tongue shoulder. Ham tongue jowl, tenderloin flank beef ribs ribeye boudin fatback porchetta cupim corned beef jerky. Boudin chuck porchetta, venison shank shoulder alcatra jowl ground round.</p>
-                </div>
-              </div><!-- End Panel Collapse -->
-            </div>
-          </div>
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">
-                <a href="#collapse-3" data-toggle="collapse" data-parent="#accordion">
-                  Question Three?
-                </a>
-              </div> <!-- End panel title -->
-              <div id="collapse-3" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <p class="text-justify">Bacon ipsum dolor amet beef ribs meatball shoulder biltong kielbasa t-bone capicola beef chuck boudin cupim pancetta. Andouille picanha frankfurter, capicola rump bresaola drumstick turkey. Venison flank sirloin kielbasa short ribs frankfurter turducken cow beef ribs hamburger. Sausage meatball strip steak, pork loin leberkas hamburger chuck andouille ground round doner prosciutto fatback. Leberkas rump ball tip meatball, andouille shank fatback cupim pork chop tongue shoulder. Ham tongue jowl, tenderloin flank beef ribs ribeye boudin fatback porchetta cupim corned beef jerky. Boudin chuck porchetta, venison shank shoulder alcatra jowl ground round.</p>
-                </div>
-              </div> <!-- End Panel Collapse -->
-            </div>
-          </div>
-        </div>
+<!-- End Carousel -->
 
 
 <!-- call to action -->
-    <section>
-      <div class="well">
-        <div class="container text-center">
-          <h3>Subscribe for more free stuff</h3>
-          <p>Enter your name and email</p>
 
-          <form action="" class="form-inline">
-            <div class="form-group">
-              <label for="subscription">Subscribe</label>
-              <input type="text" class="form-control" id="subscription" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="text" class="form-control" id="email" placeholder="Enter Your Email">
-            </div>
-          </form>
+    <section>
+      <div class="well" id="contact">
+        <div class="container text-center">
+          <h3>Here are all the ways for you to contact me <small>Send me an email or caontact me on social media</small></h3>
+          <p></p>
+
+          <div class="container">
+              <p class="lead"><span class="glyphicon glyphicon-envelope"></span>
+              <%= mail_to("tallestkeith@gmail.com", name = "tallestkeith@gmail.com")%></p>
+              <p class="lead"></p>
+              
+          </div>
+          
           <hr>
 
         </div> <!-- End Container -->
