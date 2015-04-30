@@ -1,0 +1,14 @@
+<div class="comment clearfix">
+	<div class="comment_content">
+		<p class="comment_name"><strong><%= comment.name %></strong></p>
+		<p class="comment_body"><strong><%= comment.body %></strong></p>
+		<p class="comment_time"><strong><%= time_ago_in_words(comment.created_at) %></strong></p>
+	</div>
+</div>
+
+<%= div_for comment do %>
+  <p><strong>Posted  ago</strong>
+  	<br/>
+  		<%= comment.body %>
+  </p>
+<% end %>

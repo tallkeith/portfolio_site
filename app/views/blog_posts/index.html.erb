@@ -15,7 +15,7 @@
   <tbody>
     <% @blog_posts.each do |blog_post| %>
       <tr>
-        <td><%= blog_post.blog.author %></td>
+        <td><%= blog_post.author %></td>
         <td><%= blog_post.subject %></td>
         <td><%= blog_post.post %></td>
         <td><%=blog_post.blog_comments.count%></td>
