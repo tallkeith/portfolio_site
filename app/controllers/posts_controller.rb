@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -33,13 +34,20 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-    respond_with(@post)
+    @post = Post.find(params[:id])
+
+    if @post.update(params[:post].permit(:title, :body))
+      redirect_to @post
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
-    respond_with(@post)
+ 
+    redirect_to posts_path
   end
 
   private
