@@ -1,3 +1,45 @@
+<!-- Blog Header and Sidebar -->
+  <div id="sidebar">
+    <div id="logo">
+      <%= link_to posts_path do %>
+      <%= image_tag "Keith with sunglasses.jpg", class: "img-circle img-responsive" %>
+      <% end %>
+    </div>
+
+    <ul>
+      <li class="category">Website</li>
+      <li><%= link_to "Blog", posts_path %></li>
+      <li>About</li>
+    </ul>
+
+    <ul>
+      <li class="category">Social</li>
+      <li><a href="http://github.com/tallkeith"><i class="fa fa-github-square fa-3x"></i>Github</a></li>
+      <li><a href="http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/"><i class="fa fa-linkedin-square fa-3x"></i>Linkedin</a></li>
+      <li><a href="http://twitter.com/tallestkeith"><i class="fa fa-twitter-square fa-3x"></i>Twitter</a></li>
+      <li><a href="http://facebook.com/tallestkeith"><i class="fa fa-facebook-square fa-3x"></i>Facebook</a></li>
+      <li><a href="mailto:tallestkeith@gmail.com">Email</a></li>
+    </ul>
+
+    <p class="sign_in">Admin Login</p>
+  </div>
+<!-- End Blog Header and Sidebar -->
+ <div id="main_content">
+    <div id="header">
+      <p>All Posts</p>
+ 
+      <div class="buttons">
+        <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <button class="button">Log Out</button>
+      </div>
+    </div>
+ 
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+
+
+
 <h1>Recent posts</h1>
 <% @posts.each do |post| %>
   <div class="post_wrapper">

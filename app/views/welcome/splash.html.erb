@@ -34,7 +34,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="navbar-right">
-                    <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "btn btn-default" %>
+                    <%= link_to "Sign out",destroy_user_session_path, method: :delete%>
                   </li>
                 </ul>
 
@@ -97,7 +97,7 @@
 <!-- Welcome Blurb -->
   <div class="cover-container">
     <section>
-      <div class="page-header" id="welcome_blurb">
+      <div class="page-header text-center" id="welcome_blurb">
         <p class="lead">Thank you for visiting my page! Feel free to poke around and check out my work. This page is a work in progress, so check back often for updates. There are several projects in the works!</p>
          
         <a href="https://github.com/tallkeith/portfolio_site" target="_blank" class="btn btn-lg btn-primary">Github Repo for This Page</a>
@@ -177,17 +177,17 @@
       <hr>
 
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-3 text-center">
           <div class="panel panel-default">
             <div class="panel-body">
               <h4><%=link_to "Github Repo", ("http://www.github.com/tallkeith"), class: "btn btn-success", :target => "_blank"%></h4>
-              <p class="text-justify">Click that there button and you will see all the things I have worked on since I learned of the existence of version control. Feel free to fork me!</p>
+              <p class="text-justify">Click that there button and you will see all the things I have worked on since I learned of the existence of version control.</p>
 
             </div> <!-- end panel body -->
           </div> <!-- end panel -->
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 text-center">
           <div class="panel panel-default">
             <div class="panel-body">
               <h4><%=link_to "LinkedIn", ('http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/'), class: "btn btn-primary", :target => "_blank" %></h4>
@@ -197,7 +197,7 @@
           </div> <!-- end panel -->
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 text-center">
           <div class="panel panel-default">
             <div class="panel-body">
               <h4><%=link_to "Twitter", ('http://www.twiter.com/tallestkeith'), class: "btn btn-info", :target => "_blank" %></h4>
@@ -207,7 +207,7 @@
           </div> <!-- end panel -->
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 text-center">
           <div class="panel panel-default">
             <div class="panel-body">
               <h4><%=link_to "Facebook", ('http://www.facebook.com/tallestkeith'), class: "btn btn-warning", :target => "_blank" %></h4>
