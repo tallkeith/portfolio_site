@@ -7,12 +7,11 @@
 		Submitted <%= time_ago_in_words(@post.created_at) %> Ago
 	</p>
 
-	 <%= render :partial => @post %>
+	
 
 
 
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-	<%= link_to 'Back', posts_path %>
+
 
 	<p class="body">
 		<%= @post.body %>
@@ -42,3 +41,5 @@
 	    <p><%= f.submit "Add comment" %></p>
 	<% end %>
 
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Back', posts_path %>
