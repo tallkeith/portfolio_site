@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  
-    resources :posts do
-      resources :comments, :only => [:create]
-    end
-
-  
-
   get 'welcome/splash'
 
   get 'blogs/samplejson'
@@ -36,7 +29,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :posts
+  resources :posts do
+      resources :comments
+    end
 
   resources :blog_comments
 
