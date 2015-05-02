@@ -1,61 +1,75 @@
-<div id="post_content">
-	<h1 class="title">
-		<%= @post.title %>
-	</h1>
+<!--Sidebar -->
+<div class="col-sm-3">
+  <div id="sidebar">
+    <div id="logo">
+      <%= link_to posts_path do %>
+      <%= image_tag "Keith with sunglasses.jpg", class: "img-circle img-responsive" %>
+      <% end %>
+    </div>
 
-	<p class="date">
-    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-    | <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= @post.body %>
-  </p>
+    <ul>
+      <li class="category">Website</li>
+      <li><%= link_to "Blog", posts_path %></li>
+      <li><%= link_to "Portfolio", welcome_splash_path %></li>
+      <li></li>
+    </ul>
 
-	<div id="comments">
-	  <h2><%= @post.comments.count %> Comments</h2>
-		  <%= render @post.comments %>
-	 
-	  <h3>Add a comment:</h3>
-	    <%= render "comments/form" %>
+    <ul>
+      <li class="category">Social</li>
+      <li><a href="http://github.com/tallkeith"><i class="fa fa-github-square">Github</i></a></li>
+      <li><a href="http://www.linkedin.com/pub/keith-nash/5b/a06/4a6/"><i class="fa fa-linkedin-square">Linkedin</i></a></li>
+      <li><a href="http://twitter.com/tallestkeith"><i class="fa fa-twitter-square">Twitter</i></a></li>
+      <li><a href="http://facebook.com/tallestkeith"><i class="fa fa-facebook-square">Facebook</i></a></li>
+      <li><a href="mailto:tallestkeith@gmail.com">Email</a></li>
+    </ul>
+
+    <p class="sign_in">Admin Login</p>
+  </div>
+</div>
+<!-- End Sidebar -->
+
+<!--  Blog Header -->
+ <div id="main_content">
+    <div id="header">
+      <p>All Posts</p>
+ 
+      <div class="buttons">
+        <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <button class="button">Log Out</button>
+      </div>
+    </div>
+ 
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+<!-- End Blog Header -->
+
+<div class="container">
+	<div class="col-md-9">
+	<div id="post_content">
+		<h1 class="title">
+			<%= @post.title %>
+		</h1>
+
+		<p class="date">
+	    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+	    | <%= link_to 'Edit', edit_post_path(@post) %> |
+	      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+	      <%= @post.body %>
+	  </p>
+
+		<div id="comments">
+		  <h2><%= @post.comments.count %> Comments</h2>
+			  <%= render @post.comments %>
+		 
+		  <h3>Add a comment:</h3>
+		    <%= render "comments/form" %>
+		</div>
 	</div>
-
-
-
-
-
+</div>
 </div>
 	
 
 
-
-
-<!-- 
-	<p class="body">
-		
-	</p>
-
-	<div id="comments">
-		<h2>There are <%= @post.comments.count %> Comments</h2>
-		<p><%= render :partial => @post.comments %></p>
-
-		<h3>Add a comment:</h3>
-
-	</div>
-</div>
-
-
-
-	<h2>Comments</h2>
-	<div id="comments">
-		
-	</div>
-
-	<%= form_for [@post, Comment.new] do |f| %>
-	  <p><%= f.label :body, "New comment" %>
-	  	<br/>
-	  	  <%= f.text_area :body %>
-	    </p>
-	    <p><%= f.submit "Add comment" %></p>
-	<% end %>
- -->
 	<%= link_to 'Edit', edit_post_path(@post) %> |
 	<%= link_to 'Back', posts_path %>
